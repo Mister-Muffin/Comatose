@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.view.View
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
@@ -21,9 +22,9 @@ class MainPreferenceFragment : PreferenceFragmentCompat() {
         setPreferencesFromResource(R.xml.main, rootKey)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
     }
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {

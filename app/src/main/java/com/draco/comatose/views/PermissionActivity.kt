@@ -39,5 +39,6 @@ class PermissionActivity : AppCompatActivity() {
     }
 
     /* Disallow exit */
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {}
 }
